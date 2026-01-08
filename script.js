@@ -125,63 +125,19 @@ const experienceObserver = new IntersectionObserver(
 experienceObserver.observe(experienceContainer);
 
 /* --------------------------------------------------
-    Carousel for Projects Section (md or larger)
+    Flip Card Function for Projects Section
 -------------------------------------------------- */
-const prevButton = document.querySelector(".swiper-button-prev");
-const nextButton = document.querySelector(".swiper-button-next");
-const carouselItems = document.getElementById("carousel-items");
-const dots = document.querySelectorAll("#carousel-indicators span");
-
-let currentIndex = 0;
-const items = document.querySelectorAll("#carousel-items > div");
-const totalItems = items.length;
-
-function updateCarousel() {
-    const offset = -currentIndex * items[0].clientWidth;
-    carouselItems.style.transform = `translateX(${offset}px)`;
-
-    // Update dots
-    dots.forEach((dot, index) => {
-    if (index === currentIndex) {
-        dot.classList.add("bg-[#ff4e50]", "scale-150");
-        dot.classList.remove("bg-gray-400");
+function flipCard(button) {
+    // Find the parent flip-card-inner element
+    const cardInner = button.closest('.flip-card').querySelector('.flip-card-inner');
+    
+    // Toggle the rotation
+    if (cardInner.style.transform === 'rotateY(180deg)') {
+        cardInner.style.transform = 'rotateY(0deg)';
     } else {
-        dot.classList.add("bg-gray-400");
-        dot.classList.remove("bg-[#ff4e50]", "scale-150");
+        cardInner.style.transform = 'rotateY(180deg)';
     }
-    });
 }
-
-prevButton.addEventListener("click", () => {
-    currentIndex = currentIndex > 0 ? currentIndex - 1 : totalItems - 1;
-    updateCarousel();
-});
-
-nextButton.addEventListener("click", () => {
-    currentIndex = currentIndex < totalItems - 1 ? currentIndex + 1 : 0;
-    updateCarousel();
-});
-
-// Add click event to dots for direct navigation
-dots.forEach((dot, index) => {
-    dot.addEventListener("click", () => {
-        currentIndex = index;
-        updateCarousel();
-    });
-});
-
-// Add keyboard navigation
-document.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowLeft") {
-        currentIndex = currentIndex > 0 ? currentIndex - 1 : totalItems - 1;
-        updateCarousel();
-    } else if (e.key === "ArrowRight") {
-        currentIndex = currentIndex < totalItems - 1 ? currentIndex + 1 : 0;
-        updateCarousel();
-    }
-});
-
-updateCarousel(); // Set initial state
 
 /* --------------------------------------------------
     Research Section Animation
