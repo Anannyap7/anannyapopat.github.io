@@ -10,6 +10,18 @@ function closeMenu() {
     sideMenu.style.transform = "translateX(16rem)";
 }
 
+/* --------------------------------------------------
+    Flip Card Function for Projects Section
+    (Must be global for onclick handlers)
+-------------------------------------------------- */
+function flipCard(button) {
+    // Find the parent flip-card-inner element
+    const cardInner = button.closest('.flip-card').querySelector('.flip-card-inner');
+    
+    // Toggle the flipped class
+    cardInner.classList.toggle('flipped');
+}
+
 document.addEventListener("DOMContentLoaded", () => {
 /* --------------------------------------------------
     Navbar
@@ -123,17 +135,6 @@ const experienceObserver = new IntersectionObserver(
 );
 
 experienceObserver.observe(experienceContainer);
-
-/* --------------------------------------------------
-    Flip Card Function for Projects Section
--------------------------------------------------- */
-function flipCard(button) {
-    // Find the parent flip-card-inner element
-    const cardInner = button.closest('.flip-card').querySelector('.flip-card-inner');
-    
-    // Toggle the flipped class
-    cardInner.classList.toggle('flipped');
-}
 
 /* --------------------------------------------------
     Research Section Animation
