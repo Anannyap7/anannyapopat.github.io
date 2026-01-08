@@ -146,3 +146,62 @@
     animation: fadeInUp 0.6s ease forwards;
   }
   
+  /* Flip Card Functionality */
+  .flip-card-inner.flipped {
+    transform: rotateY(180deg) !important;
+  }
+  
+  /* Flip Card Visual Enhancements */
+  .flip-card {
+    border: 2px solid transparent;
+    border-radius: 0.75rem;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(135deg, #ff4e50, #ff867a, #328bfd) border-box;
+    transition: all 0.3s ease;
+  }
+  
+  .flip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(255, 78, 80, 0.2);
+  }
+  
+  /* View Details Button with Icon Container */
+  .btn-view-details {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn-view-details .btn-icon-container {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-left: 8px;
+  }
+  
+  .btn-view-details .btn-icon-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .btn-view-details .btn-icon-default {
+    opacity: 1;
+  }
+  
+  .btn-view-details .btn-icon-hover {
+    opacity: 0;
+  }
+  
+  /* On hover: button bg becomes gradient (colorful), so show white/light icon */
+  .btn-view-details:hover .btn-icon-default {
+    opacity: 0;
+  }
+  
+  .btn-view-details:hover .btn-icon-hover {
+    opacity: 1;
+  }
+  

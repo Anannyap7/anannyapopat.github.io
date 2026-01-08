@@ -131,12 +131,8 @@ function flipCard(button) {
     // Find the parent flip-card-inner element
     const cardInner = button.closest('.flip-card').querySelector('.flip-card-inner');
     
-    // Toggle the rotation
-    if (cardInner.style.transform === 'rotateY(180deg)') {
-        cardInner.style.transform = 'rotateY(0deg)';
-    } else {
-        cardInner.style.transform = 'rotateY(180deg)';
-    }
+    // Toggle the flipped class
+    cardInner.classList.toggle('flipped');
 }
 
 /* --------------------------------------------------
