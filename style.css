@@ -1,0 +1,148 @@
+/* Glossy "shine" effect for heading */
+.shine-effect {
+    position: relative;
+    background: linear-gradient(120deg, #ffb793, #ff7a99, #ff4e50);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: shine 4s linear infinite;
+  }
+  
+  @keyframes shine {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+  
+  /* About Section (timeline icons) */
+  #timeline-line {
+    height: 0;
+    transition: height 2s ease-in-out;
+  }
+  #masters,
+  #bachelors {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+  #masters.opacity-100,
+  #bachelors.opacity-100 {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  #intro-paragraph {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+  #intro-paragraph.opacity-100 {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Skills Section (card) */
+  .card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .card.appeared {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Experience Section */
+  #experience-timeline-line {
+    height: 0;
+    transition: height 2s ease-in-out;
+  }
+  
+  /* Carousel Navigation Buttons */
+  .swiper-button-next,
+  .swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255);
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid transparent; /* Default border */
+    transform: translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+  
+  .swiper-button-next:hover,
+  .swiper-button-prev:hover {
+    border-color: #ff4e50; /* Change border color on hover */
+    transform: translateY(-60%); /* Move upwards slightly on hover */
+  }
+  
+  .swiper-button-next {
+    right: -50px;
+  }
+  .swiper-button-prev {
+    left: -50px;
+  }
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 18px;
+    color: #ff4e50; /* Icon color */
+  }
+  
+  /* Icon Hover Swap */
+  .icon-container {
+    position: relative;
+    width: 12px; /* Adjust based on your icon size */
+    height: 12px;
+  }
+  .icon-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    transition: opacity 0.3s ease-in-out;
+  }
+  .icon-container .icon-default {
+    opacity: 1;
+  }
+  .icon-container .icon-hover {
+    opacity: 0;
+  }
+  a:hover .icon-default {
+    opacity: 0;
+  }
+  a:hover .icon-hover {
+    opacity: 1;
+  }
+  
+  /* Fade-in-up Keyframes */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-in-up.appeared {
+    animation: fadeInUp 0.6s ease forwards;
+  }
+  

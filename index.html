@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<!-- Contains metadata about the document (not visible on the webpage) -->
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Compatibility with Internet Explorers latest rendering machine  -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Ensures the webpage is responsive, adapting to the device's screen size.
+        width=device-width sets the viewport width to the device's width.
+        initial-scale=1.0 sets the initial zoom level to 1. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anannya Popat - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link the tailwind JS file with the HTML code -->
+    <script src="./tailwind.config.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <!-- Link your external CSS file here -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="overflow-x-hidden bg-white text-gray-800">
+    <!-- To add gradient image in the background -->
+    <div class="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-70%]">
+        <img src="Images/header-bg-color.png" alt="" class="w-full">
+    </div>
+    <nav class="w-full fixed px-3 lg:px-5 xl:px-[5%] py-4 flex items-center
+    justify-between z-50">
+        <img src="Images/myicon.png" alt="logo" class="w-28 cursor-pointer mr-14">
+        <!-- It keeps the nav bar hidden on screen smaller than 768px or md size -->
+        <!-- The hidden class is overridden by md:flex, so the element is visible and displayed as a flexbox -->
+        <ul class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 
+        bg-white shadow-sm bg-opacity-50">
+            <li><a href="#home" class="hover:text-[#ff4e50]">Home</a></li>
+            <li><a href="#about" class="hover:text-[#ff4e50]">About</a></li>
+            <li><a href="#work" class="hover:text-[#ff4e50]">Experience</a></li>
+            <li><a href="#skills" class="hover:text-[#ff4e50]">Skills</a></li>
+            <li><a href="#projects1" class="hover:text-[#ff4e50]">Projects</a></li>
+            <li><a href="#research" class="hover:text-[#ff4e50]">Research</a></li>
+            <li><a href="#contact" class="hover:text-[#ff4e50]">Contact</a></li>
+        </ul>
+
+        <!-- Group the moon icon and "Contact" under the same div such that they are next to each other -->
+        <div class="flex items-center gap-4">
+            <!-- Add a button as well for "Contact" and align it horizontally with logo -->
+            <a href="contact.html" target="_blank"
+                class="hidden lg:flex items-center gap-3 px-10 py-2.5
+            border border-gray-500 rounded-full ml-4 transition-all duration-300
+            bg-gradient-to-r from-white to-white hover:from-[#ff4e50] hover:to-[#ff867a] hover:border-transparent text-gray-800 hover:text-white">
+                Contact
+                <span class="relative icon-container">
+                    <!-- Default Icon -->
+                    <img src="Images/arrow-icon.png" alt="Default Icon" class="icon-default">
+                    <!-- Hover Icon -->
+                    <img src="Images/arrow-icon-dark.png" alt="Hover Icon" class="icon-hover">
+                </span>
+            </a>
+
+            <button class="block md:hidden ml-3" onclick="openMenu()">
+                <img src="./Images/menu-black.png" alt="" class="w-6">
+            </button>
+        </div>
+
+        <!-- mobile menu -->
+        <!-- To keep the menu hidden until the menu icon is pressed, -right-64 -->
+        <ul id="sideMenu" class="flex md:hidden flex-col gap-8 px-10 py-20 
+        fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50
+        transition duration-500">
+
+            <!-- Close button for the menu list -->
+            <div class="absolute right-6 top-6" onclick="closeMenu()">
+                <img src="Images/close-black.png" alt="" class="w-5 cursor-pointer">
+            </div>
+
+            <li><a href="#home" onclick="closeMenu()">Home</a></li>
+            <li><a href="#about" onclick="closeMenu()">About</a></li>
+            <li><a href="#work" onclick="closeMenu()">Experience</a></li>
+            <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
+            <li><a href="#projects2" onclick="closeMenu()">Projects</a></li>
+            <li><a href="#research" onclick="closeMenu()">Research</a></li>
+            <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- header section -->
+    <div id="home" class="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center 
+justify-center gap-4">
+        <img src="Images/mypic1.png" alt="" class="rounded-full w-36 border border-[#ff4e50] shadow-lg">
+        <h3 class="flex items-center gap-2 text-xl md:text-2xl mb-3 font-semibold">
+            Hi! I am Anannya Popat
+            <img src="Images/hand-icon.png" alt="" class="w-6">
+        </h3>
+        <!-- Gloss Animation Heading -->
+        <h1 class="shine-effect text-3xl sm:text-4xl lg:text-[50px] font-semibold" style="line-height: 1.15;">
+            Machine Learning Specialist and Artificial Intelligence Researcher based in Toronto
+        </h1>
+        <p class="max-w-2xl mx-auto">I am a AI Engineer, passionate about transforming consumer experiences with
+            the aid of computer graphics, computer vision and LLMs.
+        </p>
+        <!-- Circular Buttons for Social Links -->
+        <div class="flex justify-center space-x-4">
+            <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=anannyapopat.official@gmail.com" target="_blank"
+               class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-r from-[#328bfd] to-[#49b1fd] text-white hover:from-[#49b1fd] hover:to-[#49b1fd] transition-all duration-300">
+               <img src="./Images/email.png" alt="Email" class="w-4 h-4">
+            </a>
+            <a href="https://www.linkedin.com/in/anannya-popat-/" target="_blank"
+                class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-r from-[#328bfd] to-[#49b1fd] text-white hover:from-[#49b1fd] hover:to-[#49b1fd] transition-all duration-300">
+                <img src="./Images/linkedin.png" alt="LinkedIn" class="w-3.5 h-3.5">
+            </a>
+            <a href="https://github.com/Anannyap7" target="_blank"
+                class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-r from-[#328bfd] to-[#49b1fd] text-white hover:from-[#49b1fd] hover:to-[#49b1fd] transition-all duration-300">
+                <img src="./Images/github.png" alt="GitHub" class="w-4 h-4">
+            </a>
+            <a href="https://scholar.google.ca/citations?hl=en&user=ZA1i6AcAAAAJ&view_op=list_works&gmla=AH70aAXk7ChoAHKwcv0i6WQ4sJOCyMpw9g7PCI6oaKPgTv2Mlig8pMri93fGXaZRpNd_QHp1EzkUU7bh2p8OIiGH"
+                target="_blank"
+                class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-r from-[#328bfd] to-[#49b1fd] text-white hover:from-[#49b1fd] hover:to-[#49b1fd] transition-all duration-300">
+                <img src="./Images/scholar.png" alt="Google Scholar" class="w-4 h-4">
+            </a>
+            <a href="https://www.behance.net/anannyapopat" target="_blank"
+                class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-r from-[#328bfd] to-[#49b1fd] text-white hover:from-[#49b1fd] hover:to-[#49b1fd] transition-all duration-300">
+                <img src="./Images/behance.png" alt="Behance" class="w-4 h-4">
+            </a>
+        </div>
+
+        <!-- Buttons for Resume and Contact Me -->
+        <div class="flex flex-col sm:flex-row items-center gap-4 mt-2">
+            <a href="#contact" class="px-10 py-3 border rounded-full bg-gradient-to-r 
+            from-[#ff4e50] to-[#ff867a] text-white font-semibold flex 
+        items-center gap-2 hover:-translate-y-1 transition-all duration-300">Contact Me<img
+                    src="./Images/right-arrow-white.png" alt="" class="w-4"></a>
+
+            <a href="./Files/Resume.pdf" download class="px-10 py-3 border rounded-full border-gray-500 font-semibold 
+            flex items-center gap-2 bg-white hover:-translate-y-1 transition-all duration-300">My Resume<img
+                    src="./Images/download-icon.png" alt="" class="w-4"></a>
+        </div>
+    </div>
+
+    <!-- About Me Section -->
+    <div id="about" class="max-w-screen-xl mx-auto px-20 py-10 pt-20 scroll-mt-16">
+        <h2 class="text-center text-4xl md:text-5xl font-extrabold text-gray-800 mb-6 relative">
+            About Me
+            <span class="block w-24 h-1 bg-gradient-to-r from-[#ff4e50] to-[#ff867a] mx-auto mt-2 rounded-full"></span>
+        </h2>
+
+        <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-20 mt-10">
+            <!-- Left Section: Image -->
+            <div class="w-full sm:w-auto max-w-xs mx-auto lg:mx-0">
+                <img src="./Images/mypic3.jpg" alt="Profile Picture" class="w-full sm:w-80 rounded-3xl shadow-lg">
+            </div>
+
+            <!-- Right Section: Text and Timeline -->
+            <div class="flex-1 text-center lg:text-left max-w-2xl">
+                <!-- Introductory Paragraph with Interactivity -->
+                <p id="intro-paragraph"
+                    class="mb-10 opacity-0 translate-y-4 transition-all duration-1000 ease-out text-base md:text-lg text-gray-700 leading-relaxed mx-auto lg:mx-0">
+                    Hi there! I’m all about bringing ideas to life with computer vision, LLMs, and deep learning.
+                    From addressing real-world challenges in healthcare to creating impactful solutions for clients, I’ve had a
+                    blast blending tech and creativity. I’m a big fan of AI, designing,
+                    and coding—basically, anything that lets me innovate and make life a little cooler!
+                </p>
+
+                <!-- Education Timeline -->
+                <div id="timeline-container" class="relative opacity-0 transition-opacity duration-1000 ease-out">
+                    <!-- Timeline Vertical Line -->
+                    <div id="timeline-line"
+                        class="absolute left-[20px] top-0 h-0 w-[2px] bg-gray-300 transition-all duration-2000 ease-in-out">
+                    </div>
+
+                    <!-- Masters -->
+                    <div id="masters"
+                        class="flex items-start mb-10 relative opacity-0 translate-y-5 transition-all duration-1000 delay-500 ease-out">
+                        <div
+                            class="w-10 h-10 aspect-square rounded-full bg-gradient-to-r from-[#ff4e50] to-[#ff867a] flex justify-center items-center text-white font-bold z-10">
+                            M
+                        </div>
+                        <div class="ml-12">
+                            <h3 class="text-lg font-semibold text-gray-800 max-w-2xl">
+                                Masters of Science in Applied Computing with spl. in Artificial Intelligence
+                            </h3>
+                            <p class="text-gray-600">
+                                <span class="font-medium text-gray-700">University of Toronto</span>
+                            </p>
+                            <p class="text-gray-500 text-sm italic">
+                                2023 - 2025
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Bachelors -->
+                    <div id="bachelors"
+                        class="flex items-start relative opacity-0 translate-y-5 transition-all duration-1000 delay-1500 ease-out">
+                        <div
+                            class="w-10 h-10 aspect-square rounded-full bg-gradient-to-r from-[#328bfd] to-[#49b1fd] flex justify-center items-center text-white font-bold z-10">
+                            B
+                        </div>
+                        <div class="ml-12">
+                            <h3 class="text-lg font-semibold text-gray-800 max-w-2xl">
+                                Bachelors of Technology in Computer Science and Engineering and Business Systems
+                            </h3>
+                            <p class="text-gray-700">
+                                Vellore Institute of Technology
+                            </p>
+                            <p class="text-gray-500 text-sm italic">
+                                2019 - 2023
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Experience Section -->
+    <div id="work" class="w-full px-6 sm:px-8 md:px-[12%] py-10 pt-20 mt-20 scroll-mt-16">
+        <h2 class="text-center text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-800 mb-6 relative">
+            Experience
+            <span class="block w-24 h-1 bg-gradient-to-r from-[#ff4e50] to-[#ff867a] mx-auto mt-2 rounded-full"></span>
+        </h2>
+
+        <div id="experience-timeline-container" class="relative opacity-0 transition-opacity duration-1000 ease-out">
+            <!-- Timeline Vertical Line -->
+            <div id="experience-timeline-line"
+                class="absolute left-[10px] sm:left-[20px] top-0 w-[2px] h-0 border-l-4 border-dotted border-gray-300 z-0">
+            </div>
+            
+            <!-- Experience #1 -->
+            <a href="https://www.nextpathway.com/" target="_blank"
+                class="group flex flex-col sm:flex-row items-start mb-10 relative no-underline">
+                <!-- Marker -->
+                <div class="w-8 sm:w-10 h-8 sm:h-10 aspect-square rounded-full bg-gradient-to-r from-[#ff4e50] to-[#ff867a] flex justify-center items-center text-white font-bold z-10 opacity-100 translate-y-5 transition-transform duration-1000 ease-out">
+                    <img src="./Images/target.png" alt="" class="w-7 sm:w-9">
+                </div>
+                <div class="ml-0 sm:ml-12 mt-6 sm:mt-0 p-4 sm:p-6 md:p-8 border border-transparent rounded-lg bg-white shadow-md group-hover:shadow-lg hover:border-[#ff4e50] transition-all duration-500">
+                    <h3 class="text-base sm:text-lg font-semibold text-gray-800 group-hover:text-[#ff4e50] flex flex-col sm:flex-row items-start sm:items-center transition-all duration-500">
+                        AI Engineer (Automation)
+                        <span class="text-gray-800 group-hover:text-[#ff867a] sm:ml-2 flex items-center">
+                            · NextPathway
+                            <img src="./Images/arrow-icon.png" alt="" class="w-3 ml-3 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
+                        </span>
+                    </h3>
+                    <p class="text-gray-600"><span class="font-medium text-gray-700">Aug 2025 - Current</span></p>
+                    <p class="text-gray-500 mt-4 text-sm sm:text-base">
+                        Built AI-driven pipelines to translate legacy ETL code, extract metadata, and map job lineage with 100% accuracy, leveraging LLMs to automate parsing, translation, and dependency mapping—reducing client migration timelines from two years to six months. Partnered across teams to deliver production-ready modernization solutions that helped the organization achieve Snowflake’s highest partner status and drive multi-million-dollar enterprise revenue.
+                    </p>
+                    <div class="flex items-center flex-wrap gap-2 sm:gap-4 mt-4 sm:mt-6">
+                        <span class="bg-[#ffeeee] text-[#ff4e50] px-3 py-1 border border-[#ff4e50] rounded-full text-xs sm:text-sm">Python</span>
+                        <span class="bg-[#ffeeee] text-[#ff4e50] px-3 py-1 border border-[#ff4e50] rounded-full text-xs sm:text-sm">PyTorch</span>
+                        <span class="bg-[#ffeeee] text-[#ff4e50] px-3 py-1 border border-[#ff4e50] rounded-full text-xs sm:text-sm">SQL</span>
+                        <span class="bg-[#ffeeee] text-[#ff4e50] px-3 py-1 border border-[#ff4e50] rounded-full text-xs sm:text-sm">Spark</span>
+                        <span class="bg-[#ffeeee] text-[#ff4e50] px-3 py-1 border border-[#ff4e50] rounded-full text-xs sm:text-sm">Snowflake</span>
+                        <span class="bg-[#ffeeee] text-[#ff4e50] px-3 py-1 border border-[#ff4e50] rounded-full text-xs sm:text-sm">Agentic AI</span>
+                        <span class="bg-[#ffeeee] text-[#ff4e50] px-3 py-1 border border-[#ff4e50] rounded-full text-xs sm:text-sm">Prompt Engineering</span>
+                        <span class="bg-[#ffeeee] text-[#ff4e50] px-3 py-1 border border-[#ff4e50] rounded-full text-xs sm:text-sm">Git</span>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Experience #2 -->
+            <a href="https://www.uhn.ca/" target="_blank"
+                class="group flex flex-col sm:flex-row items-start mb-10 relative no-underline">
+                <div class="w-8 sm:w-10 h-8 sm:h-10 aspect-square rounded-full bg-gradient-to-r from-[#328bfd] to-[#49b1fd] flex justify-center items-center text-white font-bold z-10 opacity-100 translate-y-5 transition-transform duration-1000 ease-out">
+                    <img src="./Images/target.png" alt="" class="w-7 sm:w-9">
+                </div>
+                <div class="ml-0 sm:ml-12 mt-6 sm:mt-0 p-4 sm:p-6 md:p-8 border border-transparent rounded-lg bg-white shadow-md group-hover:shadow-lg hover:border-[#328bfd] transition-all duration-500">
+                    <h3 class="text-base sm:text-lg font-semibold text-gray-800 group-hover:text-[#328bfd] flex flex-col sm:flex-row items-start sm:items-center transition-all duration-500">
+                        Machine Learning Specialist (Team Lead)
+                        <span class="text-gray-800 group-hover:text-[#49b1fd] sm:ml-2 flex items-center">
+                            · University Health Network
+                            <img src="./Images/arrow-icon.png" alt="" class="w-3 ml-3 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
+                        </span>
+                    </h3>
+                    <p class="text-gray-600"><span class="font-medium text-gray-700">Feb 2025 - August 2025</span></p>
+                    <p class="text-gray-500 mt-4 text-sm sm:text-base">
+                        Led the deployment of an ML pipeline for a realistic and interactive 3D anatomical modeling system using patient-specific CT/MRI scans. Contributed to real-time surgical AI by advancing Tool Tissue Interaction detection and classification using YOLOv11 and a Vision Transformer model.
+                    </p>
+                    <div class="flex items-center flex-wrap gap-2 sm:gap-4 mt-4 sm:mt-6">
+                        <span class="bg-[#e8f4ff] text-[#328bfd] px-3 py-1 border border-[#328bfd] rounded-full text-xs sm:text-sm">Python</span>
+                        <span class="bg-[#e8f4ff] text-[#328bfd] px-3 py-1 border border-[#328bfd] rounded-full text-xs sm:text-sm">PyTorch</span>
+                        <span class="bg-[#e8f4ff] text-[#328bfd] px-3 py-1 border border-[#328bfd] rounded-full text-xs sm:text-sm">Transformers</span>
+                        <span class="bg-[#e8f4ff] text-[#328bfd] px-3 py-1 border border-[#328bfd] rounded-full text-xs sm:text-sm">OpenCV</span>
+                        <span class="bg-[#e8f4ff] text-[#328bfd] px-3 py-1 border border-[#328bfd] rounded-full text-xs sm:text-sm">Generative AI</span>
+                        <span class="bg-[#e8f4ff] text-[#328bfd] px-3 py-1 border border-[#328bfd] rounded-full text-xs sm:text-sm">Docker</span>
+                        <span class="bg-[#e8f4ff] text-[#328bfd] px-3 py-1 border border-[#328bfd] rounded-full text-xs sm:text-sm">Git</span>
+                        <span class="bg-[#e8f4ff] text-[#328bfd] px-3 py-1 border border-[#328bfd] rounded-full text-xs sm:text-sm">Rest APIs</span>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Experience #3 -->
+            <a href="https://www.uhn.ca/" target="_blank"
+                class="group flex flex-col sm:flex-row items-start mb-10 relative no-underline">
+                <div class="w-8 sm:w-10 h-8 sm:h-10 aspect-square rounded-full bg-gradient-to-r from-[#ff4e50] to-[#ff867a] flex justify-center items-center text-white font-bold z-10 opacity-100 translate-y-5 transition-transform duration-1000 ease-out">
+                    <img src="./Images/target.png" alt="" class="w-7 sm:w-9">
+                </div>
+                <div class="ml-0 sm:ml-12 mt-6 sm:mt-0 p-4 sm:p-6 md:p-8 border border-transparent rounded-lg bg-white shadow-md group-hover:shadow-lg hover:border-[#ff4e50] transition-all duration-500">
+                    <h3 class="text-base sm:text-lg font-semibold text-gray-800 group-hover:text-[#ff4e50] flex flex-col sm:flex-row items-start sm:items-center transition-all duration-500">
+                        AI Research Intern
+                        <span class="text-gray-800 group-hover:text-[#ff867a] sm:ml-2 flex items-center">
+                            · University Health Network
+                            <img src="./Images/arrow-icon.png" alt="" class="w-3 ml-3 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
+                        </span>
+                    </h3>
+                    <p class="text-gray-600"><span class="font-medium text-gray-700">May 2024 - Dec 2024</span></p>
+                    <p class="text-gray-500 mt-4 text-sm sm:text-base">
+                        Led the development of an interactive 3D anatomical modeling system from patient-specific CT scans to revolutionize surgical planning. Implemented an nnU-Net-based segmentation algorithm to accurately generate 3D visualizations of segmented organs. Enhanced the realism of rendered anatomical models by optimizing and applying a GAN-based texture generation algorithm.
+                    </p>
+                    <div class="flex items-center flex-wrap gap-2 sm:gap-4 mt-4 sm:mt-6">
+                        <span class="bg-[#ffeeee] text-[#ff4e50] px-3 py-1 border border-[#ff4e50] rounded-full text-xs sm:text-sm">Python</span>
+                        <span class="bg-[#ffeeee] text-[#ff4e50] px-3 py-1 border border-[#ff4e50] rounded-full text-xs sm:text-sm">PyTorch</span>
+                        <span class="bg-[#ffeeee] text-[#ff4e50] px-3 py-1 border border-[#ff4e50] rounded-full text-xs sm:text-sm">OpenCV</span>
+                        <span class="bg-[#ffeeee] text-[#ff4e50] px-3 py-1 border border-[#ff4e50] rounded-full text-xs sm:text-sm">Generative AI</span>
+                        <span class="bg-[#ffeeee] text-[#ff4e50] px-3 py-1 border border-[#ff4e50] rounded-full text-xs sm:text-sm">VTK</span>
+                        <span class="bg-[#ffeeee] text-[#ff4e50] px-3 py-1 border border-[#ff4e50] rounded-full text-xs sm:text-sm">Blender</span>
+                        <span class="bg-[#ffeeee] text-[#ff4e50] px-3 py-1 border border-[#ff4e50] rounded-full text-xs sm:text-sm">NumPy</span>
+                        <span class="bg-[#ffeeee] text-[#ff4e50] px-3 py-1 border border-[#ff4e50] rounded-full text-xs sm:text-sm">NiBabel</span>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Experience #4 -->
+            <a href="https://www.utoronto.ca/" target="_blank"
+                class="group flex flex-col sm:flex-row items-start mb-10 relative no-underline">
+                <!-- Marker -->
+                <div class="w-8 sm:w-10 h-8 sm:h-10 aspect-square rounded-full bg-gradient-to-r from-[#328bfd] to-[#49b1fd] flex justify-center items-center text-white font-bold z-10 opacity-100 translate-y-5 transition-transform duration-1000 ease-out">
+                    <img src="./Images/target.png" alt="" class="w-7 sm:w-9">
+                </div>
+                <div class="ml-0 sm:ml-12 mt-6 sm:mt-0 p-4 sm:p-6 md:p-8 border border-transparent rounded-lg bg-white shadow-md group-hover:shadow-lg hover:border-[#328bfd] transition-all duration-500">
+                    <h3 class="text-base sm:text-lg font-semibold text-gray-800 group-hover:text-[#328bfd] flex flex-col sm:flex-row items-start sm:items-center transition-all duration-500">
+                        Teaching Assistant
+                        <span class="text-gray-800 group-hover:text-[#49b1fd] sm:ml-2 flex items-center">
+                            · University of Toronto
+                            <img src="./Images/arrow-icon.png" alt="" class="w-3 ml-3 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
+                        </span>
+                    </h3>
+                    <p class="text-gray-600"><span class="font-medium text-gray-700">Sep 2023 - Apr 2024</span></p>
+                    <p class="text-gray-500 mt-4 text-sm sm:text-base">
+                        Mentored students in Python programming across diverse disciplines, simplifying complex concepts through relatable analogies and personalized problem-solving strategies. Adapted teaching methods to accommodate varied backgrounds, fostering a clear understanding for learners in management, psychology, computer science, and beyond.
+                    </p>
+                    <div class="flex items-center flex-wrap gap-2 sm:gap-4 mt-4 sm:mt-6">
+                        <span class="bg-[#e8f4ff] text-[#328bfd] px-3 py-1 border border-[#328bfd] rounded-full text-xs sm:text-sm">Python</span>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Experience #5 -->
+            <a href="https://www.adglobal360.com/" target="_blank"
+                class="group flex flex-col sm:flex-row items-start mb-10 relative no-underline">
+                <!-- Marker -->
+                <div class="w-8 sm:w-10 h-8 sm:h-10 aspect-square rounded-full bg-gradient-to-r from-[#ff4e50] to-[#ff867a] flex justify-center items-center text-white font-bold z-10 opacity-100 translate-y-5 transition-transform duration-1000 ease-out">
+                    <img src="./Images/target.png" alt="" class="w-7 sm:w-9">
+                </div>
+                <div class="ml-0 sm:ml-12 mt-6 sm:mt-0 p-4 sm:p-6 md:p-8 border border-transparent rounded-lg bg-white shadow-md group-hover:shadow-lg hover:border-[#ff4e50] transition-all duration-500">
+                    <h3 class="text-base sm:text-lg font-semibold text-gray-800 group-hover:text-[#ff4e50] flex flex-col sm:flex-row items-start sm:items-center transition-all duration-500">
+                        Data Science Intern
+                        <span class="text-gray-800 group-hover:text-[#ff867a] sm:ml-2 flex items-center">
+                            · AdGlobal360
+                            <img src="./Images/arrow-icon.png" alt="" class="w-3 ml-3 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
+                        </span>
+                    </h3>
+                    <p class="text-gray-600"><span class="font-medium text-gray-700">May 2022 - Jul 2022</span></p>
+                    <p class="text-gray-500 mt-4 text-sm sm:text-base">
+                        Designed a lead scoring prediction model using Random Forests, Logistic Regression, and Deep Neural Networks, achieving high accuracy in identifying potential buyers from website activity. Performed exploratory data analysis and feature engineering, visually presenting key customer conversion factors beneficial to the stakeholders.
+                    </p>
+                    <div class="flex items-center flex-wrap gap-2 sm:gap-4 mt-4 sm:mt-6">
+                        <span class="bg-[#ffeeee] text-[#ff4e50] px-3 py-1 border border-[#ff4e50] rounded-full text-xs sm:text-sm">Python</span>
+                        <span class="bg-[#ffeeee] text-[#ff4e50] px-3 py-1 border border-[#ff4e50] rounded-full text-xs sm:text-sm">Tensorflow</span>
+                        <span class="bg-[#ffeeee] text-[#ff4e50] px-3 py-1 border border-[#ff4e50] rounded-full text-xs sm:text-sm">Scikit-Learn</span>
+                        <span class="bg-[#ffeeee] text-[#ff4e50] px-3 py-1 border border-[#ff4e50] rounded-full text-xs sm:text-sm">Pandas</span>
+                        <span class="bg-[#ffeeee] text-[#ff4e50] px-3 py-1 border border-[#ff4e50] rounded-full text-xs sm:text-sm">SQL/PowerBI</span>
+                        <span class="bg-[#ffeeee] text-[#ff4e50] px-3 py-1 border border-[#ff4e50] rounded-full text-xs sm:text-sm">NumPy</span>
+                        <span class="bg-[#ffeeee] text-[#ff4e50] px-3 py-1 border border-[#ff4e50] rounded-full text-xs sm:text-sm">Big Data</span>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Experience #6 -->
+            <a href="https://www.isa.org/" target="_blank"
+                class="group flex flex-col sm:flex-row items-start mb-10 relative no-underline">
+                <!-- Marker -->
+                <div class="w-8 sm:w-10 h-8 sm:h-10 aspect-square rounded-full bg-gradient-to-r from-[#328bfd] to-[#49b1fd] flex justify-center items-center text-white font-bold z-10 opacity-100 translate-y-0 transition-transform duration-1000 ease-out">
+                    <img src="./Images/target.png" alt="" class="w-7 sm:w-9">
+                </div>
+
+                <div class="ml-0 sm:ml-12 mt-6 sm:mt-0 p-4 sm:p-6 md:p-8 border border-transparent rounded-lg bg-white shadow-md group-hover:shadow-lg hover:border-[#328bfd] transition-all duration-500">
+                    <h3 class="text-base sm:text-lg font-semibold text-gray-800 group-hover:text-[#328bfd] flex flex-col sm:flex-row items-start sm:items-center transition-all duration-500">
+                        UI/UX Designer
+                        <span class="text-gray-800 group-hover:text-[#49b1fd] sm:ml-2 flex items-center">
+                            · International Society of Automation (ISA) - VIT
+                            <img src="./Images/arrow-icon.png" alt="" class="w-3 ml-3 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
+                        </span>
+                    </h3>
+                    <p class="text-gray-600"><span class="font-medium text-gray-700">Dec 2019 - Dec 2021</span></p>
+                    <p class="text-gray-500 mt-4 text-sm sm:text-base">
+                        Designed and prototyped user-friendly interfaces for web and mobile applications using Figma and collaborated with developers for a better digital experience as a core member of the Design Team for the ISA chapter.
+                    </p>
+                    <div class="flex items-center flex-wrap gap-2 sm:gap-4 mt-4 sm:mt-6">
+                        <span class="bg-[#e8f4ff] text-[#328bfd] px-3 py-1 border border-[#328bfd] rounded-full text-xs sm:text-sm">Figma</span>
+                        <span class="bg-[#e8f4ff] text-[#328bfd] px-3 py-1 border border-[#328bfd] rounded-full text-xs sm:text-sm">Adobe Photoshop</span>
+                        <span class="bg-[#e8f4ff] text-[#328bfd] px-3 py-1 border border-[#328bfd] rounded-full text-xs sm:text-sm">Design Thinking</span>
+                    </div>
+                </div>
+            </a>
+
+
+        </div>
+    </div>
+
+
+    <!-- Skills Section -->
+    <div id="skills" class="w-full px-[12%] py-10 pt-20 mt-20 mb-10 pb-20 scroll-mt-20">
+        <h2 class="text-center text-4xl md:text-5xl font-extrabold text-gray-800 mb-6 relative">
+            Skills
+            <span class="block w-24 h-1 bg-gradient-to-r from-[#ff4e50] to-[#ff867a] mx-auto mt-2 rounded-full"></span>
+        </h2>
+
+        <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 mt-10 max-w-2xl lg:max-w-none mx-auto">
+            <!-- Programming Languages Card -->
+            <div
+                class="card border border-gray-700 rounded-lg p-6 hover:shadow-[4px_4px_0_#616161] hover:bg-[#ffeeee] hover:-translate-y-1 transition-all duration-1000">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-6 text-center">
+                    Languages
+                </h3>
+                <ul class="text-gray-600 text-lg grid grid-cols-2 gap-y-4">
+                    <li class="flex items-center">
+                        <img src="./Images/python.png" alt="Python Icon" class="w-6 h-6 mr-3"> Python
+                    </li>
+                    <li class="flex items-center">
+                        <img src="./Images/r.png" alt="R Icon" class="w-6 h-6 mr-3"> R
+                    </li>
+                    <li class="flex items-center">
+                        <img src="./Images/java.png" alt="Java Icon" class="w-6 h-6 mr-3"> Java
+                    </li>
+                    <li class="flex items-center">
+                        <img src="./Images/c-.png" alt="C/C++ Icon" class="w-6 h-6 mr-3"> C/C++
+                    </li>
+                    <li class="flex items-center">
+                        <img src="./Images/sql-server.png" alt="SQL Icon" class="w-6 h-6 mr-3"> SQL
+                    </li>
+                    <li class="flex items-center">
+                        <img src="./Images/html.png" alt="HTML Icon" class="w-6 h-6 mr-3"> HTML
+                    </li>
+                    <li class="flex items-center">
+                        <img src="./Images/css-3.png" alt="CSS Icon" class="w-6 h-6 mr-3"> CSS
+                    </li>
+                    <li class="flex items-center">
+                        <img src="./Images/js.png" alt="JavaScript Icon" class="w-6 h-6 mr-3"> JavaScript
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Frameworks Card -->
+            <div
+                class="card border border-gray-700 rounded-lg p-6 hover:shadow-[4px_4px_0_#616161] hover:bg-[#ffeeee] hover:-translate-y-1 transition-all duration-1000">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-6 text-center">
+                    Frameworks
+                </h3>
+                <ul class="text-gray-600 text-lg grid grid-cols-2 gap-y-4">
+                    <li class="flex items-center">
+                        <img src="./Images/pytorch.212x256.png" alt="PyTorch Icon" class="w-6 h-6 mr-3"> PyTorch
+                    </li>
+                    <li class="flex items-center">
+                        <img src="./Images/tensorflow.238x256.png" alt="TensorFlow Icon" class="w-6 h-6 mr-3">
+                        TensorFlow
+                    </li>
+                    <li class="flex items-center">
+                        <img src="./Images/opencv.207x256.png" alt="OpenCV Icon" class="w-6 h-6 mr-3"> OpenCV
+                    </li>
+                    <li class="flex items-center">
+                        <img src="./Images/scikit-learn.png" alt="Scikit-Learn Icon" class="w-6 h-6 mr-3"> Scikit-Learn
+                    </li>
+                    <li class="flex items-center">
+                        <img src="./Images/Flask.png" alt="Flask Icon" class="w-6 h-6 mr-3"> Flask
+                    </li>
+                    <li class="flex items-center">
+                        <img src="./Images/Jupyter.png" alt="Jupyter Icon" class="w-6 h-6 mr-3"> Jupyter
+                    </li>
+                    <li class="flex items-center">
+                        <img src="./Images/Pandas.png" alt="Pandas Icon" class="w-6 h-6 mr-3"> Pandas
+                    </li>
+                    <li class="flex items-center">
+                        <img src="./Images/NumPy.png" alt="NumPy Icon" class="w-6 h-6 mr-3"> NumPy
+                    </li>
+                    <li class="flex items-center">
+                        <img src="./Images/git.png" alt="Matplotlib Icon" class="w-6 h-6 mr-3"> Git
+                    </li>
+                    <li class="flex items-center">
+                        <img src="./Images/nibabel.png" alt="NiBabel Icon" class="w-6 h-6 mr-3"> NiBabel
+                    </li>
+                    <li class="flex items-center">
+                        <img src="./Images/AWS.png" alt="AWS Icon" class="w-6 h-6 mr-3"> AWS
+                    </li>
+                    <li class="flex items-center">
+                        <img src="./Images/docker.png" alt="Figma Icon" class="w-6 h-6 mr-3"> Docker
+                    </li>
+                    <li class="flex items-center">
+                        <img src="./Images/langchain.png" alt="Figma Icon" class="w-6 h-6 mr-3"> LangChain
+                    </li>
+                    <li class="flex items-center">
+                        <img src="./Images/streamlit.png" alt="Figma Icon" class="w-6 h-6 mr-3"> Streamlit
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Graphics Card -->
+            <div
+                class="card border border-gray-700 rounded-lg p-6 hover:shadow-[4px_4px_0_#616161] hover:bg-[#ffeeee] hover:-translate-y-1 transition-all duration-1000">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-6 text-center">
+                    Computer Graphics/Designing
+                </h3>
+                <ul class="text-gray-600 text-lg space-y-4">
+                    <li class="flex items-center">
+                        <img src="./Images/vtk.svg" alt="VTK Icon" class="w-6 h-6 mr-3"> Visualization Toolkit
+                    </li>
+                    <li class="flex items-center">
+                        <img src="./Images/Blender.png" alt="Blender Icon" class="w-6 h-6 mr-3"> Blender
+                    </li>
+                    <li class="flex items-center">
+                        <img src="./Images/figma.png" alt="Figma Icon" class="w-6 h-6 mr-3"> Figma
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects Section -->
+    <div id="projects1" class="hidden md:flex w-full items-center justify-center min-h-screen px-[12%] py-10 mb-10">
+        <div class="w-full max-w-5xl">
+            <h2 class="text-center text-4xl md:text-5xl font-extrabold text-gray-800 mb-6 relative">
+                Projects
+                <span
+                    class="block w-24 h-1 bg-gradient-to-r from-[#ff4e50] to-[#ff867a] mx-auto mt-2 rounded-full"></span>
+            </h2>
+            
+            <!-- Scroll Hint -->
+            <p class="text-center text-gray-700 font-semibold mb-3">
+                👉 Scroll horizontally to view all projects
+            </p>
+
+            <!-- Relative Wrapper for Carousel and Controls -->
+            <div class="w-full">
+                <!-- Carousel Container -->
+                <div class="w-full h-96 overflow-auto flex items-center justify-center">
+                    <!-- Carousel Items -->
+                    <div id="carousel-items" class="flex transition-transform duration-700">
+                        
+                        <!-- Project Card 1 -->
+                        <div class="w-full flex-none px-4"> 
+                            <div class="bg-white rounded-lg p-4 flex items-center h-40"> 
+                                <div class="flex-none w-2/5 flex justify-center"> 
+                                    <img src="Images/anger_translator.jpg" alt="Project 1" class="w-72 rounded-xl"> 
+                                </div> 
+                                <div class="w-3/5"> 
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">Pocket Comedian: BosonAI Hackathon Winner</h3> 
+                                    <p class="text-gray-600 mb-4"> 
+                                        Developed a real-time “pocket comedian” app using Audio LLMs, Flask, and Socket.IO for seamless speech-to-speech comedic interactions. It leverages the Higgs Audio Understanding Model, Qwen3, and Higgs Audio TTS for context-aware, expressive responses. Features include selectable comedian voices, multiple comedic modes, multi-turn conversation memory, and support for Mandarin and French input/output. 
+                                    </p> 
+                                    <div class="flex space-x-4">
+                                        <!-- GitHub Icon -->
+                                        <a href="https://github.com/Zhu-K/boson-hackathon" target="_blank"
+                                            class="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r from-[#328bfd] to-[#49b1fd] text-white hover:from-[#49b1fd] hover:to-[#49b1fd] transition-all duration-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M12 .5C5.645.5.5 5.645.5 12c0 5.091 3.292 9.396 7.86 10.91.574.104.783-.25.783-.556 0-.275-.01-1.004-.015-1.97-3.199.694-3.873-1.541-3.873-1.541-.523-1.33-1.276-1.685-1.276-1.685-1.042-.713.079-.699.079-.699 1.152.081 1.756 1.183 1.756 1.183 1.026 1.755 2.691 1.248 3.345.954.104-.743.402-1.248.73-1.535-2.553-.29-5.238-1.278-5.238-5.694 0-1.258.449-2.286 1.185-3.09-.118-.29-.514-1.452.114-3.027 0 0 .968-.309 3.173 1.178.92-.255 1.91-.383 2.893-.388.982.005 1.973.133 2.894.388 2.204-1.487 3.171-1.178 3.171-1.178.63 1.575.233 2.737.114 3.027.738.804 1.185 1.832 1.185 3.09 0 4.43-2.69 5.4-5.255 5.683.41.353.776 1.048.776 2.114 0 1.526-.014 2.757-.014 3.132 0 .31.207.665.788.553C20.712 21.392 24 17.085 24 12c0-6.355-5.145-11.5-12-11.5z" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Project Card 2 -->
+                        <div class="w-full flex-none px-4">
+                            <div class="bg-white rounded-lg p-4 flex items-center h-40">
+                                <div class="flex-none w-2/5 flex justify-center">
+                                    <img src="Images/project-1.jpg" alt="Project 1" class="w-72 rounded-xl">
+                                </div>
+                                <div class="w-3/5">
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">Ink-to-Tint: Manga Artisan</h3>
+                                    <p class="text-gray-600 mb-4">
+                                        An automated system for manga colorization and style conversion to
+                                        enhance readability and ease artists' workload. Implements a
+                                        Pix2Pix conditional GAN in PyTorch with a CNN-based discriminator and U-Net
+                                        generator for colorizing black-and-white manga pages. Fine-tunes a pre-trained
+                                        Stable Diffusion model for manga style transfer across four distinct art styles.
+                                    </p>
+                                    <div class="flex space-x-4">
+                                        <!-- GitHub Icon -->
+                                        <a href="https://github.com/Anannyap7/ink_to_tint-manga_artisan" target="_blank"
+                                            class="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r from-[#328bfd] to-[#49b1fd] text-white hover:from-[#49b1fd] hover:to-[#49b1fd] transition-all duration-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M12 .5C5.645.5.5 5.645.5 12c0 5.091 3.292 9.396 7.86 10.91.574.104.783-.25.783-.556 0-.275-.01-1.004-.015-1.97-3.199.694-3.873-1.541-3.873-1.541-.523-1.33-1.276-1.685-1.276-1.685-1.042-.713.079-.699.079-.699 1.152.081 1.756 1.183 1.756 1.183 1.026 1.755 2.691 1.248 3.345.954.104-.743.402-1.248.73-1.535-2.553-.29-5.238-1.278-5.238-5.694 0-1.258.449-2.286 1.185-3.09-.118-.29-.514-1.452.114-3.027 0 0 .968-.309 3.173 1.178.92-.255 1.91-.383 2.893-.388.982.005 1.973.133 2.894.388 2.204-1.487 3.171-1.178 3.171-1.178.63 1.575.233 2.737.114 3.027.738.804 1.185 1.832 1.185 3.09 0 4.43-2.69 5.4-5.255 5.683.41.353.776 1.048.776 2.114 0 1.526-.014 2.757-.014 3.132 0 .31.207.665.788.553C20.712 21.392 24 17.085 24 12c0-6.355-5.145-11.5-12-11.5z" />
+                                            </svg>
+                                        </a>
+
+                                        <!-- Document Icon -->
+                                        <a href="https://bit.ly/49QWqAI" target="_blank"
+                                            class="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r from-[#ff4e50] to-[#ff867a] text-white hover:from-[#ff867a] hover:to-[#ff867a] transition-all duration-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9l-7-7zM12 3.5L18.5 10H13a1 1 0 0 1-1-1V3.5zM6 4h5v3a3 3 0 0 0 3 3h3v10H6V4z" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Project Card 3 -->
+                        <div class="w-full flex-none px-4">
+                            <div class="bg-white rounded-lg p-4 flex items-center h-40">
+                                <div class="flex-none w-2/5 flex justify-center">
+                                    <img src="Images/pikachu_pic.jpg" alt="Project 1" class="w-72 rounded-xl">
+                                </div>
+                                <div class="w-3/5">
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">Optimized LLM Modeling: Classification and Instruction Fine-Tuning</h3>
+                                    <p class="text-gray-600 mb-4">
+                                        Integrated attention mechanism alongside KV cache optimizations to improve model efficiency. Experimented with positional embedding strategies in Transformers to enhance model performance. Implemented classification and instruction fine-tuning using diverse prompt styles and data processing techniques. Successfully deployed models on AWS Sagemaker through Docker containers and an MLOps pipeline for automated training, validation, and deployment. Built a RAG Agent for Pokemon Battle Analysis using LangChain and <a href="https://pokemon-rag-agent.streamlit.app/" target="_blank" class="text-blue-600 underline">Streamlit App</a>.
+                                    </p>
+                                    <div class="flex space-x-4">
+                                        <!-- GitHub Icon -->
+                                        <a href="https://github.com/Anannyap7/LLM-From-Scratch" target="_blank"
+                                            class="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r from-[#328bfd] to-[#49b1fd] text-white hover:from-[#49b1fd] hover:to-[#49b1fd] transition-all duration-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M12 .5C5.645.5.5 5.645.5 12c0 5.091 3.292 9.396 7.86 10.91.574.104.783-.25.783-.556 0-.275-.01-1.004-.015-1.97-3.199.694-3.873-1.541-3.873-1.541-.523-1.33-1.276-1.685-1.276-1.685-1.042-.713.079-.699.079-.699 1.152.081 1.756 1.183 1.756 1.183 1.026 1.755 2.691 1.248 3.345.954.104-.743.402-1.248.73-1.535-2.553-.29-5.238-1.278-5.238-5.694 0-1.258.449-2.286 1.185-3.09-.118-.29-.514-1.452.114-3.027 0 0 .968-.309 3.173 1.178.92-.255 1.91-.383 2.893-.388.982.005 1.973.133 2.894.388 2.204-1.487 3.171-1.178 3.171-1.178.63 1.575.233 2.737.114 3.027.738.804 1.185 1.832 1.185 3.09 0 4.43-2.69 5.4-5.255 5.683.41.353.776 1.048.776 2.114 0 1.526-.014 2.757-.014 3.132 0 .31.207.665.788.553C20.712 21.392 24 17.085 24 12c0-6.355-5.145-11.5-12-11.5z" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project Card 4 -->
+                        <div class="w-full flex-none px-4">
+                            <div class="bg-white rounded-lg p-4 flex items-center h-40">
+                                <div class="flex-none w-2/5 flex justify-center">
+                                    <img src="Images/project-2.png" alt="Project 2" class="w-80 rounded-xl">
+                                </div>
+                                <div class="w-3/5">
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">Text-based 3D Gaussian Splatting
+                                        Object
+                                        Segmentation</h3>
+                                    <p class="text-gray-600 mb-4">
+                                        A Python-based 3D Gaussian Splatting segmentation model that leverages LangSAM
+                                        for
+                                        text-driven 3D segmentation. Incorporates an optimized prompt initialization
+                                        strategy using K-means clustering for efficient view selection and point
+                                        sampling.
+                                        Reduces computational requirements by achieving near-optimal results with only
+                                        50%
+                                        of the input data.
+                                    </p>
+                                    <div class="flex space-x-4">
+                                        <!-- GitHub Icon -->
+                                        <a href="https://github.com/Zhu-K/text-prompted-3dgs-segmentation"
+                                            target="_blank"
+                                            class="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r from-[#328bfd] to-[#49b1fd] text-white hover:from-[#49b1fd] hover:to-[#49b1fd] transition-all duration-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M12 .5C5.645.5.5 5.645.5 12c0 5.091 3.292 9.396 7.86 10.91.574.104.783-.25.783-.556 0-.275-.01-1.004-.015-1.97-3.199.694-3.873-1.541-3.873-1.541-.523-1.33-1.276-1.685-1.276-1.685-1.042-.713.079-.699.079-.699 1.152.081 1.756 1.183 1.756 1.183 1.026 1.755 2.691 1.248 3.345.954.104-.743.402-1.248.73-1.535-2.553-.29-5.238-1.278-5.238-5.694 0-1.258.449-2.286 1.185-3.09-.118-.29-.514-1.452.114-3.027 0 0 .968-.309 3.173 1.178.92-.255 1.91-.383 2.893-.388.982.005 1.973.133 2.894.388 2.204-1.487 3.171-1.178 3.171-1.178.63 1.575.233 2.737.114 3.027.738.804 1.185 1.832 1.185 3.09 0 4.43-2.69 5.4-5.255 5.683.41.353.776 1.048.776 2.114 0 1.526-.014 2.757-.014 3.132 0 .31.207.665.788.553C20.712 21.392 24 17.085 24 12c0-6.355-5.145-11.5-12-11.5z" />
+                                            </svg>
+                                        </a>
+
+                                        <!-- Document Icon -->
+                                        <a href="https://bit.ly/3DHHM2H" target="_blank"
+                                            class="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r from-[#ff4e50] to-[#ff867a] text-white hover:from-[#ff867a] hover:to-[#ff867a] transition-all duration-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9l-7-7zM12 3.5L18.5 10H13a1 1 0 0 1-1-1V3.5zM6 4h5v3a3 3 0 0 0 3 3h3v10H6V4z" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project Card 5 -->
+                        <div class="w-full flex-none px-4">
+                            <div class="bg-white rounded-lg p-4 flex items-center h-40">
+                                <div class="flex-none w-2/5 flex justify-center">
+                                    <img src="Images/project-3.png" alt="Project 3" class="w-72 rounded-xl">
+                                </div>
+                                <div class="w-3/5">
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">Qualitative Badminton Player
+                                        Analysis</h3>
+                                    <p class="text-gray-600 mb-4">
+                                        A computer vision system for tracking player movements and classifying badminton
+                                        strokes in broadcast videos. Utilizes Particle Filter and custom jersey color
+                                        detection for player tracking with 99% accuracy. Predicts badminton strokes
+                                        using CNNs with 81% accuracy. Detects court boundaries through image
+                                        binarization, edge detection, Hough Lines, and K-Means clustering.
+                                    </p>
+                                    <div class="flex space-x-4">
+                                        <!-- GitHub Icon -->
+                                        <a href="https://github.com/Anannyap7/Qualitative-Badminton-Player-Analysis"
+                                            target="_blank"
+                                            class="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r from-[#328bfd] to-[#49b1fd] text-white hover:from-[#49b1fd] hover:to-[#49b1fd] transition-all duration-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M12 .5C5.645.5.5 5.645.5 12c0 5.091 3.292 9.396 7.86 10.91.574.104.783-.25.783-.556 0-.275-.01-1.004-.015-1.97-3.199.694-3.873-1.541-3.873-1.541-.523-1.33-1.276-1.685-1.276-1.685-1.042-.713.079-.699.079-.699 1.152.081 1.756 1.183 1.756 1.183 1.026 1.755 2.691 1.248 3.345.954.104-.743.402-1.248.73-1.535-2.553-.29-5.238-1.278-5.238-5.694 0-1.258.449-2.286 1.185-3.09-.118-.29-.514-1.452.114-3.027 0 0 .968-.309 3.173 1.178.92-.255 1.91-.383 2.893-.388.982.005 1.973.133 2.894.388 2.204-1.487 3.171-1.178 3.171-1.178.63 1.575.233 2.737.114 3.027.738.804 1.185 1.832 1.185 3.09 0 4.43-2.69 5.4-5.255 5.683.41.353.776 1.048.776 2.114 0 1.526-.014 2.757-.014 3.132 0 .31.207.665.788.553C20.712 21.392 24 17.085 24 12c0-6.355-5.145-11.5-12-11.5z" />
+                                            </svg>
+                                        </a>
+
+                                        <!-- Document Icon -->
+                                        <a href="https://bit.ly/49Qd2J5" target="_blank"
+                                            class="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r from-[#ff4e50] to-[#ff867a] text-white hover:from-[#ff867a] hover:to-[#ff867a] transition-all duration-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9l-7-7zM12 3.5L18.5 10H13a1 1 0 0 1-1-1V3.5zM6 4h5v3a3 3 0 0 0 3 3h3v10H6V4z" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project Card 6 -->
+                        <div class="w-full flex-none px-4">
+                            <div class="bg-white rounded-lg p-4 flex items-center h-40">
+                                <div class="flex-none w-2/5 flex justify-center">
+                                    <img src="Images/project-4.jpg" alt="Project 3" class="w-80 rounded-xl">
+                                </div>
+                                <div class="w-3/5">
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">Handwritten Polynomial Equation
+                                        Solver</h3>
+                                    <p class="text-gray-600 mb-4">
+                                        A Flask-based web application with HTML and CSS for solving image-based
+                                        handwritten polynomial equations. Performs image segmentation and preprocessing
+                                        to isolate numerical values and symbols. Implements a CNN model using
+                                        TensorFlow-Keras and OpenCV to detect handwritten numbers and symbols with 98%
+                                        accuracy, enhancing usability for students.
+                                    </p>
+                                    <div class="flex space-x-4">
+                                        <!-- GitHub Icon -->
+                                        <a href="https://github.com/Anannyap7/Handwritten-Polynomial-Equation-Solver"
+                                            target="_blank"
+                                            class="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r from-[#328bfd] to-[#49b1fd] text-white hover:from-[#49b1fd] hover:to-[#49b1fd] transition-all duration-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M12 .5C5.645.5.5 5.645.5 12c0 5.091 3.292 9.396 7.86 10.91.574.104.783-.25.783-.556 0-.275-.01-1.004-.015-1.97-3.199.694-3.873-1.541-3.873-1.541-.523-1.33-1.276-1.685-1.276-1.685-1.042-.713.079-.699.079-.699 1.152.081 1.756 1.183 1.756 1.183 1.026 1.755 2.691 1.248 3.345.954.104-.743.402-1.248.73-1.535-2.553-.29-5.238-1.278-5.238-5.694 0-1.258.449-2.286 1.185-3.09-.118-.29-.514-1.452.114-3.027 0 0 .968-.309 3.173 1.178.92-.255 1.91-.383 2.893-.388.982.005 1.973.133 2.894.388 2.204-1.487 3.171-1.178 3.171-1.178.63 1.575.233 2.737.114 3.027.738.804 1.185 1.832 1.185 3.09 0 4.43-2.69 5.4-5.255 5.683.41.353.776 1.048.776 2.114 0 1.526-.014 2.757-.014 3.132 0 .31.207.665.788.553C20.712 21.392 24 17.085 24 12c0-6.355-5.145-11.5-12-11.5z" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Arrows -->
+                <div class="swiper-button-prev absolute top-1/2 left-0 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </div>
+                
+                <div class="swiper-button-next absolute top-1/2 right-0 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </div>
+
+                <!-- Dots Indicator -->
+                <div id="carousel-indicators"
+                    class="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+                    <span class="w-3 h-3 bg-gray-400 rounded-full" data-index="0"></span>
+                    <span class="w-3 h-3 bg-gray-400 rounded-full" data-index="1"></span>
+                    <span class="w-3 h-3 bg-gray-400 rounded-full" data-index="2"></span>
+                    <span class="w-3 h-3 bg-gray-400 rounded-full" data-index="3"></span>
+                    <span class="w-3 h-3 bg-gray-400 rounded-full" data-index="4"></span>
+                    <span class="w-3 h-3 bg-gray-400 rounded-full" data-index="5"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects Section 2 (Stacked for small screens) -->
+    <div id="projects2"
+        class="flex md:hidden w-full flex-col items-center justify-center min-h-screen px-[5%] py-10 mb-10">
+        <h2 class="text-center text-4xl font-extrabold text-gray-800 mb-6 relative">
+            Projects
+            <span class="block w-24 h-1 bg-gradient-to-r from-[#ff4e50] to-[#ff867a] mx-auto mt-2 rounded-full"></span>
+        </h2>
+
+        <!-- Stacked Cards Wrapper -->
+        <div class="w-full max-w-xl space-y-6">
+            
+            <!-- Project Card 1 -->
+            <div class="bg-white rounded-lg p-4 fade-in-up">
+                <div class="flex flex-col items-center text-center">
+                    <!-- Image on top -->
+                    <div class="flex justify-center mb-4">
+                        <img src="Images/anger_translator.jpg" alt="Project 1" class="w-72 rounded-xl" />
+                    </div>
+                    <!-- Text below image -->
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">
+                        Pocket Comedian: BosonAI Hackathon Winner
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Developed a real-time “pocket comedian” app using Audio LLMs, Flask, and Socket.IO for seamless speech-to-speech comedic interactions. It leverages the Higgs Audio Understanding Model, Qwen3, and Higgs Audio TTS for context-aware, expressive responses. Features include selectable comedian voices, multiple comedic modes, multi-turn conversation memory, and support for Mandarin and French input/output.
+                    </p>
+                    <!-- Icons row -->
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/Zhu-K/boson-hackathon" target="_blank"
+                            class="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r from-[#328bfd] to-[#49b1fd] text-white hover:from-[#49b1fd] hover:to-[#49b1fd] transition-all duration-300">
+                            <!-- GitHub SVG -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M12 .5C5.645.5.5 5.645.5 12c0 5.091 3.292 9.396 7.86 10.91.574.104.783-.25.783-.556 0-.275-.01-1.004-.015-1.97-3.199.694-3.873-1.541-3.873-1.541-.523-1.33-1.276-1.685-1.276-1.685-1.042-.713.079-.699.079-.699 1.152.081 1.756 1.183 1.756 1.183 1.026 1.755 2.691 1.248 3.345.954.104-.743.402-1.248.73-1.535-2.553-.29-5.238-1.278-5.238-5.694 0-1.258.449-2.286 1.185-3.09-.118-.29-.514-1.452.114-3.027 0 0 .968-.309 3.173 1.178.92-.255 1.91-.383 2.893-.388.982.005 1.973.133 2.894.388 2.204-1.487 3.171-1.178 3.171-1.178.63 1.575.233 2.737.114 3.027.738.804 1.185 1.832 1.185 3.09 0 4.43-2.69 5.4-5.255 5.683.41.353.776 1.048.776 2.114 0 1.526-.014 2.757-.014 3.132 0 .31.207.665.788.553C20.712 21.392 24 17.085 24 12c0-6.355-5.145-11.5-12-11.5z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project Card 1 -->
+            <div class="bg-white rounded-lg p-4 fade-in-up">
+                <div class="flex flex-col items-center text-center">
+                    <!-- Image on top -->
+                    <div class="flex justify-center mb-4">
+                        <img src="Images/project-1.jpg" alt="Project 1" class="w-72 rounded-xl" />
+                    </div>
+                    <!-- Text below image -->
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">
+                        Ink-to-Tint: Manga Artisan
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        An automated system for manga colorization and style conversion to
+                        enhance readability and ease artists' workload. Implements a
+                        Pix2Pix conditional GAN in PyTorch with a CNN-based discriminator and U-Net
+                        generator for colorizing black-and-white manga pages. Fine-tunes a pre-trained
+                        Stable Diffusion model for manga style transfer across four distinct art styles.
+                    </p>
+                    <!-- Icons row -->
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/Anannyap7/ink_to_tint-manga_artisan" target="_blank"
+                            class="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r from-[#328bfd] to-[#49b1fd] text-white hover:from-[#49b1fd] hover:to-[#49b1fd] transition-all duration-300">
+                            <!-- GitHub SVG -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M12 .5C5.645.5.5 5.645.5 12c0 5.091 3.292 9.396 7.86 10.91.574.104.783-.25.783-.556 0-.275-.01-1.004-.015-1.97-3.199.694-3.873-1.541-3.873-1.541-.523-1.33-1.276-1.685-1.276-1.685-1.042-.713.079-.699.079-.699 1.152.081 1.756 1.183 1.756 1.183 1.026 1.755 2.691 1.248 3.345.954.104-.743.402-1.248.73-1.535-2.553-.29-5.238-1.278-5.238-5.694 0-1.258.449-2.286 1.185-3.09-.118-.29-.514-1.452.114-3.027 0 0 .968-.309 3.173 1.178.92-.255 1.91-.383 2.893-.388.982.005 1.973.133 2.894.388 2.204-1.487 3.171-1.178 3.171-1.178.63 1.575.233 2.737.114 3.027.738.804 1.185 1.832 1.185 3.09 0 4.43-2.69 5.4-5.255 5.683.41.353.776 1.048.776 2.114 0 1.526-.014 2.757-.014 3.132 0 .31.207.665.788.553C20.712 21.392 24 17.085 24 12c0-6.355-5.145-11.5-12-11.5z" />
+                            </svg>
+                        </a>
+                        <a href="https://bit.ly/49QWqAI" target="_blank"
+                            class="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r from-[#ff4e50] to-[#ff867a] text-white hover:from-[#ff867a] hover:to-[#ff867a] transition-all duration-300">
+                            <!-- Document SVG -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9l-7-7zM12 3.5L18.5 10H13a1 1 0 0 1-1-1V3.5zM6 4h5v3a3 3 0 0 0 3 3h3v10H6V4z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project Card 1 -->
+            <div class="bg-white rounded-lg p-4 fade-in-up">
+                <div class="flex flex-col items-center text-center">
+                    <!-- Image on top -->
+                    <div class="flex justify-center mb-4">
+                        <img src="Images/pikachu_pic.jpg" alt="Project 1" class="w-72 rounded-xl" />
+                    </div>
+                    <!-- Text below image -->
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">
+                        Optimized LLM Modeling: Classification and Instruction Fine-Tuning
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Integrated attention mechanism alongside KV cache optimizations to improve model efficiency. Experimented with positional embedding strategies in Transformers to enhance model performance. Implemented classification and instruction fine-tuning using diverse prompt styles and data processing techniques. Successfully deployed models on AWS Sagemaker through Docker containers and an MLOps pipeline for automated training, validation, and deployment. Built a RAG Agent for Pokemon Battle Analysis using LangChain and <a href="https://pokemon-rag-agent.streamlit.app/" target="_blank" class="text-blue-600 underline">Streamlit App</a>.
+                    </p>
+                    <!-- Icons row -->
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/Anannyap7/LLM-From-Scratch" target="_blank"
+                            class="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r from-[#328bfd] to-[#49b1fd] text-white hover:from-[#49b1fd] hover:to-[#49b1fd] transition-all duration-300">
+                            <!-- GitHub SVG -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M12 .5C5.645.5.5 5.645.5 12c0 5.091 3.292 9.396 7.86 10.91.574.104.783-.25.783-.556 0-.275-.01-1.004-.015-1.97-3.199.694-3.873-1.541-3.873-1.541-.523-1.33-1.276-1.685-1.276-1.685-1.042-.713.079-.699.079-.699 1.152.081 1.756 1.183 1.756 1.183 1.026 1.755 2.691 1.248 3.345.954.104-.743.402-1.248.73-1.535-2.553-.29-5.238-1.278-5.238-5.694 0-1.258.449-2.286 1.185-3.09-.118-.29-.514-1.452.114-3.027 0 0 .968-.309 3.173 1.178.92-.255 1.91-.383 2.893-.388.982.005 1.973.133 2.894.388 2.204-1.487 3.171-1.178 3.171-1.178.63 1.575.233 2.737.114 3.027.738.804 1.185 1.832 1.185 3.09 0 4.43-2.69 5.4-5.255 5.683.41.353.776 1.048.776 2.114 0 1.526-.014 2.757-.014 3.132 0 .31.207.665.788.553C20.712 21.392 24 17.085 24 12c0-6.355-5.145-11.5-12-11.5z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="bg-white rounded-lg p-4 fade-in-up">
+                <div class="flex flex-col items-center text-center">
+                    <div class="flex justify-center mb-4">
+                        <img src="Images/project-2.png" alt="Project 2" class="w-72 rounded-xl" />
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">
+                        Text-based 3D Gaussian Splatting Object Segmentation
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        A Python-based 3D Gaussian Splatting segmentation model that leverages LangSAM
+                        for
+                        text-driven 3D segmentation. Incorporates an optimized prompt initialization
+                        strategy using K-means clustering for efficient view selection and point
+                        sampling.
+                        Reduces computational requirements by achieving near-optimal results with only
+                        50%
+                        of the input data.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/Zhu-K/text-prompted-3dgs-segmentation" target="_blank"
+                            class="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r from-[#328bfd] to-[#49b1fd] text-white hover:from-[#49b1fd] hover:to-[#49b1fd] transition-all duration-300">
+                            <!-- GitHub SVG -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M12 .5C5.645.5.5 5.645.5 12c0 5.091 3.292 9.396 7.86 10.91.574.104.783-.25.783-.556 0-.275-.01-1.004-.015-1.97-3.199.694-3.873-1.541-3.873-1.541-.523-1.33-1.276-1.685-1.276-1.685-1.042-.713.079-.699.079-.699 1.152.081 1.756 1.183 1.756 1.183 1.026 1.755 2.691 1.248 3.345.954.104-.743.402-1.248.73-1.535-2.553-.29-5.238-1.278-5.238-5.694 0-1.258.449-2.286 1.185-3.09-.118-.29-.514-1.452.114-3.027 0 0 .968-.309 3.173 1.178.92-.255 1.91-.383 2.893-.388.982.005 1.973.133 2.894.388 2.204-1.487 3.171-1.178 3.171-1.178.63 1.575.233 2.737.114 3.027.738.804 1.185 1.832 1.185 3.09 0 4.43-2.69 5.4-5.255 5.683.41.353.776 1.048.776 2.114 0 1.526-.014 2.757-.014 3.132 0 .31.207.665.788.553C20.712 21.392 24 17.085 24 12c0-6.355-5.145-11.5-12-11.5z" />
+                            </svg>
+                        </a>
+                        <a href="https://bit.ly/3DHHM2H" target="_blank"
+                            class="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r from-[#ff4e50] to-[#ff867a] text-white hover:from-[#ff867a] hover:to-[#ff867a] transition-all duration-300">
+                            <!-- Document SVG -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9l-7-7zM12 3.5L18.5 10H13a1 1 0 0 1-1-1V3.5zM6 4h5v3a3 3 0 0 0 3 3h3v10H6V4z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div class="bg-white rounded-lg p-4 fade-in-up">
+                <div class="flex flex-col items-center text-center">
+                    <div class="flex justify-center mb-4">
+                        <img src="Images/project-3.png" alt="Project 3" class="w-72 rounded-xl" />
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">
+                        Qualitative Badminton Player Analysis
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        A computer vision system for tracking player movements and classifying badminton
+                        strokes in broadcast videos. Utilizes Particle Filter and custom jersey color
+                        detection for player tracking with 99% accuracy. Predicts badminton strokes
+                        using CNNs with 81% accuracy. Detects court boundaries through image
+                        binarization, edge detection, Hough Lines, and K-Means clustering.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/Anannyap7/Qualitative-Badminton-Player-Analysis" target="_blank"
+                            class="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r from-[#328bfd] to-[#49b1fd] text-white hover:from-[#49b1fd] hover:to-[#49b1fd] transition-all duration-300">
+                            <!-- GitHub SVG -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M12 .5C5.645.5.5 5.645.5 12c0 5.091 3.292 9.396 7.86 10.91.574.104.783-.25.783-.556 0-.275-.01-1.004-.015-1.97-3.199.694-3.873-1.541-3.873-1.541-.523-1.33-1.276-1.685-1.276-1.685-1.042-.713.079-.699.079-.699 1.152.081 1.756 1.183 1.756 1.183 1.026 1.755 2.691 1.248 3.345.954.104-.743.402-1.248.73-1.535-2.553-.29-5.238-1.278-5.238-5.694 0-1.258.449-2.286 1.185-3.09-.118-.29-.514-1.452.114-3.027 0 0 .968-.309 3.173 1.178.92-.255 1.91-.383 2.893-.388.982.005 1.973.133 2.894.388 2.204-1.487 3.171-1.178 3.171-1.178.63 1.575.233 2.737.114 3.027.738.804 1.185 1.832 1.185 3.09 0 4.43-2.69 5.4-5.255 5.683.41.353.776 1.048.776 2.114 0 1.526-.014 2.757-.014 3.132 0 .31.207.665.788.553C20.712 21.392 24 17.085 24 12c0-6.355-5.145-11.5-12-11.5z" />
+                            </svg>
+                        </a>
+                        <a href="https://bit.ly/49Qd2J5" target="_blank"
+                            class="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r from-[#ff4e50] to-[#ff867a] text-white hover:from-[#ff867a] hover:to-[#ff867a] transition-all duration-300">
+                            <!-- Document SVG -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9l-7-7zM12 3.5L18.5 10H13a1 1 0 0 1-1-1V3.5zM6 4h5v3a3 3 0 0 0 3 3h3v10H6V4z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 4 -->
+            <div class="bg-white rounded-lg p-4 fade-in-up">
+                <div class="flex flex-col items-center text-center">
+                    <div class="flex justify-center mb-4">
+                        <img src="Images/project-4.jpg" alt="Project 4" class="w-72 rounded-xl" />
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">
+                        Handwritten Polynomial Equation Solver
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        A Flask-based web application with HTML and CSS for solving image-based
+                        handwritten polynomial equations. Performs image segmentation and preprocessing
+                        to isolate numerical values and symbols. Implements a CNN model using
+                        TensorFlow-Keras and OpenCV to detect handwritten numbers and symbols with 98%
+                        accuracy, enhancing usability for students.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/Anannyap7/Handwritten-Polynomial-Equation-Solver" target="_blank"
+                            class="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r from-[#328bfd] to-[#49b1fd] text-white hover:from-[#49b1fd] hover:to-[#49b1fd] transition-all duration-300">
+                            <!-- GitHub SVG -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M12 .5C5.645.5.5 5.645.5 12c0 5.091 3.292 9.396 7.86 10.91.574.104.783-.25.783-.556 0-.275-.01-1.004-.015-1.97-3.199.694-3.873-1.541-3.873-1.541-.523-1.33-1.276-1.685-1.276-1.685-1.042-.713.079-.699.079-.699 1.152.081 1.756 1.183 1.756 1.183 1.026 1.755 2.691 1.248 3.345.954.104-.743.402-1.248.73-1.535-2.553-.29-5.238-1.278-5.238-5.694 0-1.258.449-2.286 1.185-3.09-.118-.29-.514-1.452.114-3.027 0 0 .968-.309 3.173 1.178.92-.255 1.91-.383 2.893-.388.982.005 1.973.133 2.894.388 2.204-1.487 3.171-1.178 3.171-1.178.63 1.575.233 2.737.114 3.027.738.804 1.185 1.832 1.185 3.09 0 4.43-2.69 5.4-5.255 5.683.41.353.776 1.048.776 2.114 0 1.526-.014 2.757-.014 3.132 0 .31.207.665.788.553C20.712 21.392 24 17.085 24 12c0-6.355-5.145-11.5-12-11.5z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Research Section -->
+    <div id="research"
+        class="w-full flex items-center justify-center min-h-screen px-[12%] py-10 scroll-mt-16 mb-20 pb-20">
+        <div class="w-full max-w-5xl">
+            <h2 class="text-center text-4xl md:text-5xl font-extrabold text-gray-800 mb-6 relative">
+                Research
+                <span
+                    class="block w-24 h-1 bg-gradient-to-r from-[#ff4e50] to-[#ff867a] mx-auto mt-2 rounded-full"></span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
+                <!-- Research Card 1 -->
+                <div
+                    class="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition-shadow duration-300 fade-in-up">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">
+                        Histology Classification for Early Gastric Cancer using AI Model
+                    </h3>
+                    <p class="text-gray-600 mb-2">
+                        <span class="font-semibold text-gray-700">Conference:</span> Society of American
+                        Gastrointestinal and Endoscopic Surgeons (SAGES) 2025
+                    </p>
+                    <p class="text-sm text-gray-600 mb-4">
+                        <span class="font-semibold text-gray-700">Author(s):</span> Hoseok Seo, Anannya Popat, Caterina
+                        Masino, Sojung Kim, Han Hong Lee, Kyo Young Song, Amin Madani
+                    </p>
+                    <p class="text-gray-600 mb-4">
+                        Fine-tuned ResNet50 model to classify histologic types in early
+                        gastric cancer from endoscopic images. Preprocessed a dataset of 2,944 labeled images,
+                        achieving 91% specificity for undifferentiated types and 87% specificity for differentiated type.
+                    </p>
+                    <a href="https://www.sages.org/" target="_blank"
+                        class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#ff4e50] to-[#ff867a] text-white rounded-full text-sm font-semibold hover:-translate-y-1 transition-transform duration-300">
+                        To Be Published
+                    </a>
+                </div>
+
+                <!-- Research Card 2 -->
+                <div
+                    class="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition-shadow duration-300 fade-in-up">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">
+                        Movie Poster Genre Classification using Federated Learning
+                    </h3>
+                    <p class="text-gray-600 mb-2">
+                        <span class="font-semibold text-gray-700">Conference:</span> International Conference on Machine
+                        Learning and Data Engineering (ICMLDE) 2022
+                    </p>
+                    <p class="text-sm text-gray-600 mb-4">
+                        <span class="font-semibold text-gray-700">Author(s):</span> Anannya Popat, Lakshya Gupta, Gaowri
+                        Naratha Meedinti, Dr. Boominathan Perumal
+                    </p>
+                    <p class="text-gray-600 mb-4">
+                        An image-based movie genre classification algorithm leveraging Federated Learning to ensure data
+                        privacy in graphics industry. Designed a decentralized architecture with 81% accuracy for local
+                        CNN training with distributed data, reducing storage requirements and ensuring privacy.
+                    </p>
+                    <a href="https://doi.org/10.1016/j.procs.2023.01.177" target="_blank"
+                        class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#328bfd] to-[#49b1fd] text-white rounded-full text-sm font-semibold hover:-translate-y-1 transition-transform duration-300">
+                        Elsevier
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-5 w-5" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Research Card 3 (Newly Added) -->
+                <div
+                    class="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition-shadow duration-300 fade-in-up">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">
+                        An optimized handwritten polynomial equations solver using an enhanced inception V4 model
+                    </h3>
+                    <p class="text-gray-600 mb-2">
+                        <span class="font-semibold text-gray-700">Journal:</span> Multimedia Tools and Applications 2023
+                    </p>
+                    <p class="text-sm text-gray-600 mb-4">
+                        <span class="font-semibold text-gray-700">Author(s):</span> Sudha SenthilKumar, K. Brindha,
+                        Jyotir Moy Chatterjee, Anannya Popat, Lakshya Gupta, Abhimanyu Verma
+                    </p>
+                    <p class="text-gray-600 mb-4">
+                        This paper introduces a web-based system that uses an enhanced Inception V4 CNN to recognize and
+                        solve handwritten polynomial equations (cubic, quadratic, and quintic) by determining the value
+                        of
+                        𝑥
+                        x. The model is trained on data from MathNet (arithmetic symbols), MNIST (digits), and EMNIST
+                        (alphabet characters).
+                    </p>
+                    <a href="https://doi.org/10.1007/s11042-023-17574-1" target="_blank"
+                        class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#ff4e50] to-[#ff867a] text-white rounded-full text-sm font-semibold hover:-translate-y-1 transition-transform duration-300">
+                        Springer
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-5 w-5" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Research Card 4 -->
+                <div
+                    class="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition-shadow duration-300 fade-in-up">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">
+                        A Federated Approach to Converting Photos to Sketch
+                    </h3>
+                    <p class="text-gray-600 mb-2">
+                        <span class="font-semibold text-gray-700">Conference:</span> Advances in Data-Driven Computing
+                        and Intelligent Systems (ADCIS) 2022
+                    </p>
+                    <p class="text-sm text-gray-600 mb-4">
+                        <span class="font-semibold text-gray-700">Author(s):</span> Gowri Namratha Meedinti, Anannya
+                        Popat, Lakshya Gupta, Boominathan Perumal
+                    </p>
+                    <p class="text-gray-600 mb-4">
+                        Proposed a privacy-preserving approach using Federated Learning and auto-encoding to train a
+                        camera filter for generating sketched representations of images. The method ensures data
+                        security while leveraging the CUFS database for training, addressing privacy
+                        concerns in applications like medical imaging, remote sensing, and e-commerce.
+                    </p>
+                    <a href="https://link.springer.com/chapter/10.1007/978-981-99-0981-0_29" target="_blank"
+                        class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#328bfd] to-[#49b1fd] text-white rounded-full text-sm font-semibold hover:-translate-y-1 transition-transform duration-300">
+                        Springer
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-5 w-5" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Research Card 5 (Formerly Card 4; centered in the last row) -->
+                <div
+                    class="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition-shadow duration-300 fade-in-up md:col-span-2 md:mx-auto md:max-w-xl">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">
+                        Music Genre Classification using Federated Learning
+                    </h3>
+                    <p class="text-gray-600 mb-2">
+                        <span class="font-semibold text-gray-700">Conference:</span> Information Systems for Intelligent
+                        Systems, Proceedings of ISBM 2022
+                    </p>
+                    <p class="text-sm text-gray-600 mb-4">
+                        <span class="font-semibold text-gray-700">Author(s):</span> Lakshya Gupta, Gowri Namratha
+                        Meedinti, Anannya Popat, Boominathan Perumal
+                    </p>
+                    <p class="text-gray-600 mb-4">
+                        Implemented a Federated Learning (FL) approach for privacy-preserving music genre classification
+                        using CNNs and the GTZAN dataset. The method ensures data discretion and copyright protection
+                        for music corporations in large-scale collaborative machine learning projects.
+                    </p>
+                    <a href="https://link.springer.com/chapter/10.1007/978-981-19-7447-2_23" target="_blank"
+                        class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#ff4e50] to-[#ff867a] text-white rounded-full text-sm font-semibold hover:-translate-y-1 transition-transform duration-300">
+                        Springer
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-5 w-5" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Contact Section -->
+    <div id="contact" class="w-full px-[12%] py-16 pt-20 scroll-mt-20">
+        <div class="w-full max-w-3xl mx-auto text-center">
+            <h2 class="text-center text-4xl md:text-5xl font-extrabold text-gray-800 mb-12 relative">
+                Contact Me
+                <span
+                    class="block w-24 h-1 bg-gradient-to-r from-[#ff4e50] to-[#ff867a] mx-auto mt-2 rounded-full"></span>
+            </h2>
+            <!-- Circular Buttons for Social Links -->
+            <div class="flex justify-center space-x-4 mb-8">
+                <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=anannyapopat.official@gmail.com" target="_blank"
+                   class="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-[#328bfd] to-[#49b1fd] text-white hover:from-[#49b1fd] hover:to-[#49b1fd] transition-all duration-300">
+                   <img src="./Images/email.png" alt="Email" class="w-6 h-6">
+                </a>
+                <a href="https://www.linkedin.com/in/anannya-popat-/" target="_blank"
+                    class="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-[#328bfd] to-[#49b1fd] text-white hover:from-[#49b1fd] hover:to-[#49b1fd] transition-all duration-300">
+                    <img src="./Images/linkedin.png" alt="LinkedIn" class="w-6 h-6">
+                </a>
+                <a href="https://github.com/Anannyap7" target="_blank"
+                    class="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-[#328bfd] to-[#49b1fd] text-white hover:from-[#49b1fd] hover:to-[#49b1fd] transition-all duration-300">
+                    <img src="./Images/github.png" alt="GitHub" class="w-6 h-6">
+                </a>
+                <a href="https://scholar.google.ca/citations?hl=en&user=ZA1i6AcAAAAJ&view_op=list_works&gmla=AH70aAXk7ChoAHKwcv0i6WQ4sJOCyMpw9g7PCI6oaKPgTv2Mlig8pMri93fGXaZRpNd_QHp1EzkUU7bh2p8OIiGH"
+                    target="_blank"
+                    class="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-[#328bfd] to-[#49b1fd] text-white hover:from-[#49b1fd] hover:to-[#49b1fd] transition-all duration-300">
+                    <img src="./Images/scholar.png" alt="Google Scholar" class="w-6 h-6">
+                </a>
+                <a href="https://www.behance.net/anannyapopat" target="_blank"
+                    class="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-[#328bfd] to-[#49b1fd] text-white hover:from-[#49b1fd] hover:to-[#49b1fd] transition-all duration-300">
+                    <img src="./Images/behance.png" alt="Behance" class="w-6 h-6">
+                </a>
+            </div>
+
+            <!-- Intro Line -->
+            <p class="text-gray-700 text-lg font-medium mb-4">
+                I'd love to hear from like-minded folks!
+            </p>
+
+            <!-- Contact Form -->
+            <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+                <!-- Replace with your Access Key -->
+                <input type="hidden" name="access_key" value="595a8208-87b5-4e2c-8074-61774b6cb3af">
+                <input type="text" name="name" placeholder="Your Name"
+                    class="w-full p-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#328bfd]"
+                    required>
+                <input type="email" name="email" placeholder="Your Email"
+                    class="w-full p-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#328bfd]"
+                    required>
+                <textarea name="message" placeholder="Your Message" rows="4"
+                    class="w-full p-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#328bfd]"
+                    required></textarea>
+                <button type="submit"
+                    class="px-8 py-3 bg-gradient-to-r from-[#ff4e50] to-[#ff867a] text-white rounded-full font-semibold hover:-translate-y-1 transition-all duration-300">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Link JS file with HTML -->
+    <script src="./script.js"></script>
+</body>
+
+</html>
