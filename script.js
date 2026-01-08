@@ -143,11 +143,11 @@ function updateCarousel() {
     // Update dots
     dots.forEach((dot, index) => {
     if (index === currentIndex) {
-        dot.classList.add("bg-[#ff4e50]");
+        dot.classList.add("bg-[#ff4e50]", "scale-150");
         dot.classList.remove("bg-gray-400");
     } else {
         dot.classList.add("bg-gray-400");
-        dot.classList.remove("bg-[#ff4e50]");
+        dot.classList.remove("bg-[#ff4e50]", "scale-150");
     }
     });
 }
@@ -160,6 +160,25 @@ prevButton.addEventListener("click", () => {
 nextButton.addEventListener("click", () => {
     currentIndex = currentIndex < totalItems - 1 ? currentIndex + 1 : 0;
     updateCarousel();
+});
+
+// Add click event to dots for direct navigation
+dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+        currentIndex = index;
+        updateCarousel();
+    });
+});
+
+// Add keyboard navigation
+document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") {
+        currentIndex = currentIndex > 0 ? currentIndex - 1 : totalItems - 1;
+        updateCarousel();
+    } else if (e.key === "ArrowRight") {
+        currentIndex = currentIndex < totalItems - 1 ? currentIndex + 1 : 0;
+        updateCarousel();
+    }
 });
 
 updateCarousel(); // Set initial state
