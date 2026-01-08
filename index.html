@@ -552,21 +552,21 @@ justify-center gap-4">
             </p>
 
             <!-- Relative Wrapper for Carousel and Controls -->
-            <div class="relative w-full">
+            <div class="relative w-full px-16">
                 <!-- Carousel Container -->
-                <div class="w-full h-96 overflow-hidden flex items-center justify-center">
+                <div class="w-full min-h-[320px] overflow-hidden flex items-center justify-center">
                     <!-- Carousel Items -->
                     <div id="carousel-items" class="flex transition-transform duration-700">
                         
                         <!-- Project Card 1 -->
                         <div class="w-full flex-none px-4"> 
-                            <div class="bg-white rounded-xl shadow-lg p-6 flex items-center h-40 hover:shadow-2xl transition-all duration-300 border border-gray-100"> 
+                            <div class="bg-white rounded-xl shadow-lg p-6 flex items-start min-h-[280px] hover:shadow-2xl transition-all duration-300 border border-gray-100"> 
                                 <div class="flex-none w-2/5 flex justify-center"> 
                                     <img src="Images/anger_translator.jpg" alt="Project 1" class="w-72 rounded-xl"> 
                                 </div> 
-                                <div class="w-3/5"> 
-                                    <h3 class="text-xl font-bold text-gray-800 mb-2">Pocket Comedian: BosonAI Hackathon Winner</h3> 
-                                    <p class="text-gray-600 mb-4"> 
+                                <div class="w-3/5 pl-6"> 
+                                    <h3 class="text-xl font-bold text-gray-800 mb-3">Pocket Comedian: BosonAI Hackathon Winner</h3> 
+                                    <p class="text-gray-600 mb-4 text-sm leading-relaxed"> 
                                         Developed a real-time “pocket comedian” app using Audio LLMs, Flask, and Socket.IO for seamless speech-to-speech comedic interactions. It leverages the Higgs Audio Understanding Model, Qwen3, and Higgs Audio TTS for context-aware, expressive responses. Features include selectable comedian voices, multiple comedic modes, multi-turn conversation memory, and support for Mandarin and French input/output. 
                                     </p> 
                                     <div class="flex space-x-4">
@@ -586,13 +586,13 @@ justify-center gap-4">
                         
                         <!-- Project Card 2 -->
                         <div class="w-full flex-none px-4">
-                            <div class="bg-white rounded-xl shadow-lg p-6 flex items-center h-40 hover:shadow-2xl transition-all duration-300 border border-gray-100">
+                            <div class="bg-white rounded-xl shadow-lg p-6 flex items-start min-h-[280px] hover:shadow-2xl transition-all duration-300 border border-gray-100">
                                 <div class="flex-none w-2/5 flex justify-center">
                                     <img src="Images/project-1.jpg" alt="Project 1" class="w-72 rounded-xl">
                                 </div>
-                                <div class="w-3/5">
-                                    <h3 class="text-xl font-bold text-gray-800 mb-2">Ink-to-Tint: Manga Artisan</h3>
-                                    <p class="text-gray-600 mb-4">
+                                <div class="w-3/5 pl-6">
+                                    <h3 class="text-xl font-bold text-gray-800 mb-3">Ink-to-Tint: Manga Artisan</h3>
+                                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">
                                         An automated system for manga colorization and style conversion to
                                         enhance readability and ease artists' workload. Implements a
                                         Pix2Pix conditional GAN in PyTorch with a CNN-based discriminator and U-Net
@@ -626,13 +626,13 @@ justify-center gap-4">
                         
                         <!-- Project Card 3 -->
                         <div class="w-full flex-none px-4">
-                            <div class="bg-white rounded-xl shadow-lg p-6 flex items-center h-40 hover:shadow-2xl transition-all duration-300 border border-gray-100">
+                            <div class="bg-white rounded-xl shadow-lg p-6 flex items-start min-h-[280px] hover:shadow-2xl transition-all duration-300 border border-gray-100">
                                 <div class="flex-none w-2/5 flex justify-center">
                                     <img src="Images/pikachu_pic.jpg" alt="Project 1" class="w-72 rounded-xl">
                                 </div>
-                                <div class="w-3/5">
-                                    <h3 class="text-xl font-bold text-gray-800 mb-2">Optimized LLM Modeling: Classification and Instruction Fine-Tuning</h3>
-                                    <p class="text-gray-600 mb-4">
+                                <div class="w-3/5 pl-6">
+                                    <h3 class="text-xl font-bold text-gray-800 mb-3">Optimized LLM Modeling: Classification and Instruction Fine-Tuning</h3>
+                                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">
                                         Integrated attention mechanism alongside KV cache optimizations to improve model efficiency. Experimented with positional embedding strategies in Transformers to enhance model performance. Implemented classification and instruction fine-tuning using diverse prompt styles and data processing techniques. Successfully deployed models on AWS Sagemaker through Docker containers and an MLOps pipeline for automated training, validation, and deployment. Built a RAG Agent for Pokemon Battle Analysis using LangChain and <a href="https://pokemon-rag-agent.streamlit.app/" target="_blank" class="text-blue-600 underline">Streamlit App</a>.
                                     </p>
                                     <div class="flex space-x-4">
@@ -652,15 +652,15 @@ justify-center gap-4">
 
                         <!-- Project Card 4 -->
                         <div class="w-full flex-none px-4">
-                            <div class="bg-white rounded-xl shadow-lg p-6 flex items-center h-40 hover:shadow-2xl transition-all duration-300 border border-gray-100">
+                            <div class="bg-white rounded-xl shadow-lg p-6 flex items-start min-h-[280px] hover:shadow-2xl transition-all duration-300 border border-gray-100">
                                 <div class="flex-none w-2/5 flex justify-center">
                                     <img src="Images/project-2.png" alt="Project 2" class="w-80 rounded-xl">
                                 </div>
-                                <div class="w-3/5">
-                                    <h3 class="text-xl font-bold text-gray-800 mb-2">Text-based 3D Gaussian Splatting
+                                <div class="w-3/5 pl-6">
+                                    <h3 class="text-xl font-bold text-gray-800 mb-3">Text-based 3D Gaussian Splatting
                                         Object
                                         Segmentation</h3>
-                                    <p class="text-gray-600 mb-4">
+                                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">
                                         A Python-based 3D Gaussian Splatting segmentation model that leverages LangSAM
                                         for
                                         text-driven 3D segmentation. Incorporates an optimized prompt initialization
@@ -698,14 +698,14 @@ justify-center gap-4">
 
                         <!-- Project Card 5 -->
                         <div class="w-full flex-none px-4">
-                            <div class="bg-white rounded-xl shadow-lg p-6 flex items-center h-40 hover:shadow-2xl transition-all duration-300 border border-gray-100">
+                            <div class="bg-white rounded-xl shadow-lg p-6 flex items-start min-h-[280px] hover:shadow-2xl transition-all duration-300 border border-gray-100">
                                 <div class="flex-none w-2/5 flex justify-center">
                                     <img src="Images/project-3.png" alt="Project 3" class="w-72 rounded-xl">
                                 </div>
-                                <div class="w-3/5">
-                                    <h3 class="text-xl font-bold text-gray-800 mb-2">Qualitative Badminton Player
+                                <div class="w-3/5 pl-6">
+                                    <h3 class="text-xl font-bold text-gray-800 mb-3">Qualitative Badminton Player
                                         Analysis</h3>
-                                    <p class="text-gray-600 mb-4">
+                                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">
                                         A computer vision system for tracking player movements and classifying badminton
                                         strokes in broadcast videos. Utilizes Particle Filter and custom jersey color
                                         detection for player tracking with 99% accuracy. Predicts badminton strokes
@@ -740,14 +740,14 @@ justify-center gap-4">
 
                         <!-- Project Card 6 -->
                         <div class="w-full flex-none px-4">
-                            <div class="bg-white rounded-xl shadow-lg p-6 flex items-center h-40 hover:shadow-2xl transition-all duration-300 border border-gray-100">
+                            <div class="bg-white rounded-xl shadow-lg p-6 flex items-start min-h-[280px] hover:shadow-2xl transition-all duration-300 border border-gray-100">
                                 <div class="flex-none w-2/5 flex justify-center">
                                     <img src="Images/project-4.jpg" alt="Project 3" class="w-80 rounded-xl">
                                 </div>
-                                <div class="w-3/5">
-                                    <h3 class="text-xl font-bold text-gray-800 mb-2">Handwritten Polynomial Equation
+                                <div class="w-3/5 pl-6">
+                                    <h3 class="text-xl font-bold text-gray-800 mb-3">Handwritten Polynomial Equation
                                         Solver</h3>
-                                    <p class="text-gray-600 mb-4">
+                                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">
                                         A Flask-based web application with HTML and CSS for solving image-based
                                         handwritten polynomial equations. Performs image segmentation and preprocessing
                                         to isolate numerical values and symbols. Implements a CNN model using
@@ -773,15 +773,15 @@ justify-center gap-4">
                 </div>
 
                 <!-- Navigation Arrows -->
-                <button class="swiper-button-prev absolute top-1/2 -left-4 transform -translate-y-1/2 bg-white p-4 rounded-full shadow-xl hover:shadow-2xl cursor-pointer transition-all duration-300 hover:scale-110 z-20 border-2 border-gray-100">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" />
+                <button class="swiper-button-prev absolute top-1/2 -left-16 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-xl hover:shadow-2xl cursor-pointer transition-all duration-300 hover:scale-110 z-20 border-2 border-gray-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7" />
                     </svg>
                 </button>
                 
-                <button class="swiper-button-next absolute top-1/2 -right-4 transform -translate-y-1/2 bg-white p-4 rounded-full shadow-xl hover:shadow-2xl cursor-pointer transition-all duration-300 hover:scale-110 z-20 border-2 border-gray-100">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+                <button class="swiper-button-next absolute top-1/2 -right-16 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-xl hover:shadow-2xl cursor-pointer transition-all duration-300 hover:scale-110 z-20 border-2 border-gray-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
                     </svg>
                 </button>
 
