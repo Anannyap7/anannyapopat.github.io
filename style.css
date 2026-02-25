@@ -205,3 +205,8 @@
     opacity: 1;
   }
   
+  /* Center last card when odd number of projects in 3-column grid */
+  .flip-card:last-child:nth-child(3n+1) {
+    grid-column: 2 / 3;
+  }
+  
